@@ -160,7 +160,7 @@ class CalendarState extends State<Calendar> {
 
   void setDaysOffset() {
     MonthDaysOffset = new DateTime(_dateTime.year, _dateTime.month, 0).weekday;
-
+    MonthDaysOffset == 7 ? (MonthDaysOffset = 0) : MonthDaysOffset;
   }
 
   void setToday() {
