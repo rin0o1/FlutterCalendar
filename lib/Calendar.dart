@@ -235,30 +235,6 @@ class CalendarState extends State<Calendar> {
     }
   }
 
-  Widget buildDayEventInfoWidget(int dayNumber) {
-    int eventCount = 0;
-    DateTime eventDate;
-    if (eventCount > 0) {
-      return new Expanded(
-        child: FittedBox(
-          alignment: Alignment.topLeft,
-          fit: BoxFit.contain,
-          child: new Text(
-            "Events:$eventCount",
-            maxLines: 1,
-            style: new TextStyle(
-                fontWeight: FontWeight.normal,
-                background: Paint()..color = Colors.amberAccent),
-          ),
-        ),
-      );
-    } else {
-      return new Container();
-    }
-  }
-}
-
-
 
 class CellNumber extends StatefulWidget{
 
@@ -304,8 +280,7 @@ class CellNumberState extends State<CellNumber>
         onTap: (MyDateTime==null) ? ()=>{} : onClik,
         child: new Column(
           children: <Widget>[
-            buildDayNumberWidget(),
-            //buildDayEventInfoWidget(dayNumber)
+            buildDayNumberWidget(),            
           ],
         ),
       ),
